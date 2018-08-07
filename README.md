@@ -181,4 +181,7 @@ keyword1: {value:"公众号开发课程"}
   });
 ```
 
-2.todo(待开发)
+2.获取access_token
+```js
+const accessToken = await WeiXin.getAccessToken();
+```
