@@ -1,6 +1,6 @@
 {
   "name": "fast-node-weixin",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "一个基于koa2框架的微信公众号开发框架",
   "main": "index.js",
   "scripts": {
@@ -28,7 +28,6 @@
   "homepage": "https://github.com/StrangeYear/FastNodeWeiXin#readme",
   "dependencies": {
     "axios": "^0.18.0",
-    "crypto": "^1.0.1",
     "ejs": "^2.6.1"
   }
 }
