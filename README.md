@@ -32,14 +32,17 @@ const WeiXin = require("./WeiXin");
 
 ### 匹配消息和事件
 
-1.匹配文本消息,支持匹配多个
+1.匹配文本消息,支持匹配多个，支持通配符和精确匹配
 
 ```js
 WeiXin.text("无", ctx => {
-  ctx.text("这里是无关键词");
+  ctx.text("这里是精确匹配到的无关键词");
 })
-  .text("买", ctx => {
-    ctx.text("这里是买关键词");
+  .text("买*", ctx => {
+    ctx.text("这里是通配符匹配到的买关键词----买东西");
+  })
+  .text("*买*", ctx => {
+    ctx.text("这里是两个通配符匹配到的买关键词----我要买东西");
   })
   .text("好,哈", ctx => {
     ctx.text("这里是匹配多个关键词");
@@ -185,7 +188,8 @@ keyword1: {value:"公众号开发课程"}
   });
 ```
 
-2.获取access_token
+2.获取 access_token
+
 ```js
 const accessToken = await WeiXin.getAccessToken();
 ```
