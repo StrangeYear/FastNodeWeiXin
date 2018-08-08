@@ -8,6 +8,10 @@
 
 > wx-connect
 
+## 示例项目
+
+[Example](https://github.com/StrangeYear/FastNodeWeiXinExample)
+
 ## 使用方法
 
 ### 初始化
