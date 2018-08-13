@@ -9,4 +9,7 @@ FastNodeWeiXin.mixin(require("./lib/match"));
 // 路由
 FastNodeWeiXin.mixin(require("./lib/router"));
 
+// 用户信息
+FastNodeWeiXin.mixin(require("./lib/user"));
+
 module.exports = FastNodeWeiXin;

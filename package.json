@@ -28,6 +28,7 @@
   "homepage": "https://github.com/StrangeYear/FastNodeWeiXin#readme",
   "dependencies": {
     "axios": "^0.18.0",
-    "ejs": "^2.6.1"
+    "ejs": "^2.6.1",
+    "node-uuid": "^1.4.8"
   }
 }
