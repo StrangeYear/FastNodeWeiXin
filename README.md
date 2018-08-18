@@ -14,6 +14,13 @@
 
 ## 使用方法
 
+### 安装
+> npm i fast-node-weixin -S
+
+或者
+
+>yarn add fast-node-weixin
+
 ### 初始化
 
 ```js
