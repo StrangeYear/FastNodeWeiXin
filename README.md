@@ -77,7 +77,7 @@ WeiXin.scan("stick_仇", ctx => {
 ```
 
 4.匹配关注事件
-
+> 如果是扫码关注的，会先触发扫码事件，再触发关注事件。
 ```js
 WeiXin.subscribe = ctx => {
   ctx.text("欢迎关注我的公众号");
@@ -98,6 +98,18 @@ WeiXin.unsubscribe = ctx => {
 ```js
 WeiXin.location = ctx => {};
 ```
+
+### Log记录事件
+> 文本消息，点击事件，扫码事件 匹配完之后 会触发log事件，用于统计分析。这里请不要做回复。
+
+1.文本消息log记录
+WeiXin.textLog = ctx => {};
+
+2.点击事件log记录
+WeiXin.clickLog = ctx => {};
+
+3.扫码事件log记录
+WeiXin.scanLog = ctx => {};
 
 ### 回复消息
 
