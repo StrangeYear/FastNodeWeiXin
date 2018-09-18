@@ -15,11 +15,12 @@
 ## 使用方法
 
 ### 安装
+
 > npm i fast-node-weixin -S
 
 或者
 
->yarn add fast-node-weixin
+> yarn add fast-node-weixin
 
 ### 初始化
 
@@ -39,6 +40,8 @@ const WeiXin = require("./WeiXin");
 
 ### 匹配消息和事件
 
+#### 普通消息
+
 1.匹配文本消息,支持匹配多个，支持通配符和精确匹配
 
 ```js
@@ -56,7 +59,45 @@ WeiXin.text("无", ctx => {
   });
 ```
 
-2.匹配按钮事件
+2.匹配图片消息
+
+```js
+WeiXin.image(ctx => {});
+```
+
+3.匹配语音消息
+
+```js
+WeiXin.voice(ctx => {});
+```
+
+4.匹配视频消息
+
+```js
+WeiXin.video(ctx => {});
+```
+
+5.匹配短视频消息
+
+```js
+WeiXin.shortvideo(ctx => {});
+```
+
+6.匹配普通位置消息
+
+```js
+WeiXin.normalLocation(ctx => {});
+```
+
+7.匹配链接消息
+
+```js
+WeiXin.link(ctx => {});
+```
+
+#### 事件
+
+1.匹配按钮事件
 
 ```js
 WeiXin.menu("LEFT", ctx => {
@@ -66,7 +107,7 @@ WeiXin.menu("LEFT", ctx => {
 });
 ```
 
-3.匹配扫码事件
+2.匹配扫码事件
 
 ```js
 WeiXin.scan("stick_仇", ctx => {
@@ -76,15 +117,17 @@ WeiXin.scan("stick_仇", ctx => {
 });
 ```
 
-4.匹配关注事件
+3.匹配关注事件
+
 > 如果是扫码关注的，会先触发扫码事件，再触发关注事件。
+
 ```js
 WeiXin.subscribe = ctx => {
   ctx.text("欢迎关注我的公众号");
 };
 ```
 
-5.匹配取消关注事件
+4.匹配取消关注事件
 
 ```js
 WeiXin.unsubscribe = ctx => {
@@ -93,22 +136,23 @@ WeiXin.unsubscribe = ctx => {
 };
 ```
 
-6.匹配定位事件
+5.匹配定位事件
 
 ```js
 WeiXin.location = ctx => {};
 ```
 
-### Log记录事件
-> 文本消息，点击事件，扫码事件 匹配完之后 会触发log事件，用于统计分析。这里请不要做回复。
+### Log 记录事件
 
-1.文本消息log记录
+> 文本消息，点击事件，扫码事件 匹配完之后 会触发 log 事件，用于统计分析。这里请不要做回复。
+
+1.文本消息 log 记录
 WeiXin.textLog = ctx => {};
 
-2.点击事件log记录
+2.点击事件 log 记录
 WeiXin.clickLog = ctx => {};
 
-3.扫码事件log记录
+3.扫码事件 log 记录
 WeiXin.scanLog = ctx => {};
 
 ### 回复消息
@@ -191,24 +235,28 @@ keyword1: {value:"公众号开发课程"}
 也可以自定义颜色 keyword1: {value:"公众号开发课程",value:"#ff0000"}
 
 ```js
-  var result = await WeiXin.sendTemplate({
-    touser: "oG-Wm0yxFP7lSrMASfHevIL8k5WA",
-    template_id: "mOJ3pdY0Qc6kuvNPFl5x1EvwNiAzQJe779yZWnLIY6I",
-    url: "https://www.baidu.com",
-    miniprogram: {},
-    topcolor: "#616161",
-    data: {
-      first: "这个是标题",
-      keyword1: "公众号开发课程",
-      keyword2: "19.9",
-      keyword3: "马云",
-      keyword4: "2018年8月6日"
-    }
-  });
+var result = await WeiXin.sendTemplate({
+  touser: "oG-Wm0yxFP7lSrMASfHevIL8k5WA",
+  template_id: "mOJ3pdY0Qc6kuvNPFl5x1EvwNiAzQJe779yZWnLIY6I",
+  url: "https://www.baidu.com",
+  miniprogram: {},
+  topcolor: "#616161",
+  data: {
+    first: "这个是标题",
+    keyword1: "公众号开发课程",
+    keyword2: "19.9",
+    keyword3: "马云",
+    keyword4: "2018年8月6日"
+  }
+});
 ```
 
 2.获取 access_token
 
 ```js
 const accessToken = await WeiXin.getAccessToken();
+```
+
+```
+
 ```
